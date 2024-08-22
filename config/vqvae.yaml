@@ -1,0 +1,58 @@
+exp_name : "VQVAE-STAGE1-Wavelet "
+
+# Ray args
+num_workers: 16
+num_cpus_per_worker: 23
+devices: "auto"
+strategy: "ddp"
+ray_base_folder: '/tmp/ray_results/'
+s3_results_uri: "s3://vqvae-training-output/Wavelet/"
+max_failures: 0
+
+# Training args
+checkpoint_every: 2135
+max_epochs: 300
+accelerator: "auto"
+batch_size: 3
+lr: 1e-5
+
+# Comet args
+comet:
+  # "api_key": "1ZSCBhRkLSJ8WRsccL56nKOjB",
+  # "url_override": "https://comet.prd.cloudos.autodesk.com/clientlib",
+  api_key: "7mS85oLdFp7wO7wGbRF5bW0pD"
+  project_name: "3D-Wavelet"
+  workspace: "bernini"
+
+training:
+  cumulative_bs: 64             # Example value; set according to your needs
+  base_lr: 0.001                # Example value; set according to your needs
+  max_epochs: 100               # Example value; set according to your needs
+  betas: [0.9, 0.999]           # Example values; set according to your needs
+  eps: 1e-8                     # Example value; set according to your needs
+  weight_decay: 0.01            # Example value; set according to your needs
+  warmup_epochs: 5              # Example value; set according to your needs
+  decay_epochs: 50              # Example value; set according to your needs
+
+autoencoder:
+  # Add your autoencoder configuration here
+  # Example:
+  input_channels: 3
+  output_channels: 3
+  hidden_channels: 128
+
+quantizer:
+  # Add your quantizer configuration here
+  # Example:
+  num_embeddings: 512
+  embedding_dim: 64
+
+loss:
+  # Add your loss configuration here if applicable
+  # Example:
+  reconstruction_loss_weight: 1.0
+  adversarial_params:  # Example if using adversarial loss
+    discriminator_channels: 64
+    discriminator_steps: 5
+    generator_steps: 1
+

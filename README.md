@@ -51,7 +51,7 @@ python generate.py \
 ```
 
 ## Citation
-``
+```bash
 @inproceedings{Medi_2025_BMVC,
   author    = {Tejaswini Medi and Arianna Rampini and Pradyumna Reddy and
                Pradeep Kumar Jayaraman and Margret Keuper},

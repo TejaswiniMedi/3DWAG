@@ -19,7 +19,7 @@ The framework supports:
 
 ---
 
-## Installation
+# Installation
 
 Clone the repository:
 
@@ -50,6 +50,8 @@ python generate.py \
 
 ```
 
+## Citation
+``
 @inproceedings{Medi_2025_BMVC,
   author    = {Tejaswini Medi and Arianna Rampini and Pradyumna Reddy and
                Pradeep Kumar Jayaraman and Margret Keuper},
@@ -59,4 +61,4 @@ python generate.py \
   publisher = {BMVA},
   year      = {2025}
 }
-
+``
